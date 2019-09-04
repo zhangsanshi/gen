@@ -126,7 +126,7 @@
     "build-js": "node scripts/build.js",
     "postbuild": "react-snap",
     "build": "npm-run-all build-js",
-    "build:product": "cross-env GENERATE_SOURCEMAP=false npm-run-all build-js",
+    "build:product": "cross-env GENERATE_SOURCEMAP=false npm-run-all build-js && cd build && cp -R . ../../gen-server/app/public/",
     "deploy": "node config/deploy.js",
     "analyze": "source-map-explorer build/static/js/main.*",
     "precommit": "lint-staged",
@@ -165,5 +165,4 @@
       ]
     ]
   }
-  
 }
